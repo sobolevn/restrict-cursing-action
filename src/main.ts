@@ -14,8 +14,8 @@ async function run (): Promise<void> {
 
     switch (github.context.eventName) {
       case 'issue_comment':
-        return checkIssueComment(github.context, () => {
-          octokit.issues.updateComment({
+        return checkIssueComment(github.context, async () => {
+          await octokit.issues.updateComment({
             ...github.context.repo,
             'comment_id': github.context.payload.comment.id,
             'body': 'I am so sorry! :pray:'

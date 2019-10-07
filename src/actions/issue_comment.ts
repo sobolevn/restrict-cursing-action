@@ -1,10 +1,13 @@
 import hasBadWords from '../words'
 
-export function checkIssueComment (context, editCallback): void {
+export async function checkIssueComment (
+  context,
+  editCallback,
+): Promise<void> {
   console.log(`log: ${JSON.stringify(context.payload)}`)
   const result = hasBadWords(`${context.payload.comment.body}`)
   if (result) {
-    editCallback()
+    await editCallback()
   }
   console.log(`log: ${result}`)
 }
