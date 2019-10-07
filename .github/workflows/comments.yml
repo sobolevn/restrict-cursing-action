@@ -1,14 +1,10 @@
 name: comments
 
 on:
-  - issues:
-      types:
-      - opened
-      - edited
-  - issue_comment:
-      types:
-      - created
-      - edited
+  issues:
+    types: [opened, edited]
+  issue_comment:
+    types: [created, edited]
 
 jobs:
   comments:
