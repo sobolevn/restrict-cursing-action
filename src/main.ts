@@ -9,16 +9,20 @@ import { checkIssueComment } from './actions/issue_comment'
 // TODO: check based on eventName
 async function run (): Promise<void> {
   try {
-    // const token = core.getInput('GITHUB_TOKEN')
-    // const octokit = new github.GitHub(token)
-    const context = github.context
+    const token = core.getInput('GITHUB_TOKEN')
+    const octokit = new github.GitHub(token)
 
-    // TODO: delete (edit?) instance if any words found.
-    switch (context.eventName) {
+    switch (github.context.eventName) {
       case 'issue_comment':
-        return checkIssueComment(context)
+        return checkIssueComment(github.context, () => {
+          octokit.issues.updateComment({
+            ...github.context.repo,
+            'comment_id': github.context.payload.comment.id,
+            'body': 'I am so sorry! :pray:'
+          })
+        })
       case 'issues':
-        return checkIssue(context)
+        return checkIssue(github.context)
     }
   } catch (error) {
     core.setFailed(error.message)
