@@ -3,8 +3,8 @@ import * as github from '@actions/github'
 
 async function run (): Promise<void> {
   try {
-    const token = core.getInput('GITHUB_TOKEN')
-    const octokit = new github.GitHub(token)
+    // const token = core.getInput('GITHUB_TOKEN')
+    // const octokit = new github.GitHub(token)
     const context = github.context
 
     const payload = context.payload.issue || context.payload.pull_request
