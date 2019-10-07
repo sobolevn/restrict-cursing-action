@@ -16,9 +16,9 @@ async function run (): Promise<void> {
     // TODO: delete (edit?) instance if any words found.
     switch (context.eventName) {
       case 'issue_comment':
-        return checkIssueComment(github)
+        return checkIssueComment(context)
       case 'issues':
-        return checkIssue(github)
+        return checkIssue(context)
     }
   } catch (error) {
     core.setFailed(error.message)
