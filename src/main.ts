@@ -9,7 +9,8 @@ import { checkIssueComment } from './actions/issue_comment'
 // TODO: check based on eventName
 async function run (): Promise<void> {
   try {
-    const token = core.getInput('GITHUB_TOKEN')
+    const token = core.getInput('token')
+    console.log(core.getInput('GITHUB_TOKEN'), core.getInput('token'))
     const octokit = new github.GitHub(token)
 
     switch (github.context.eventName) {
