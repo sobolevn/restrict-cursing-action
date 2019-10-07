@@ -9,12 +9,14 @@ async function run (): Promise<void> {
 
     const payload = context.payload.issue || context.payload.pull_request
     if (!payload) {
-      core.error('Payload is missing from the action')
+      core.setFailed('Payload is missing from the action')
       return
     }
 
     core.debug(payload.body || 'no body')
     core.debug(JSON.stringify(context))
+    console.log(payload.body || 'no body')
+    console.log(JSON.stringify(context))
   } catch (error) {
     core.setFailed(error.message)
   }
