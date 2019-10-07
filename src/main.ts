@@ -12,9 +12,9 @@ async function run (): Promise<void> {
       core.error('Payload is missing from the action')
       return
     }
+
     core.debug(payload.body || 'no body')
     core.debug(JSON.stringify(context))
-
   } catch (error) {
     core.setFailed(error.message)
   }

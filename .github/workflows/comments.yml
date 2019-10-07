@@ -1,6 +1,7 @@
 name: comments
 
 on:
+  - issue
   - issue_comment
 
 jobs:
@@ -10,4 +11,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - runs: npm install
     - uses: ./
