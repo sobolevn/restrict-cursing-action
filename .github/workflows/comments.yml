@@ -13,5 +13,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - runs: npm install
+    - run: npm install
     - uses: ./
