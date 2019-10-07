@@ -1,0 +1,13 @@
+name: comments
+
+on:
+  - issue_comment
+
+jobs:
+  comments:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ./

@@ -1,19 +1,23 @@
-import * as core from '@actions/core';
-import {wait} from './wait'
+import * as core from '@actions/core'
+import * as github from '@actions/github'
 
-async function run() {
+async function run (): Promise<void> {
   try {
-    const ms = core.getInput('milliseconds');
-    console.log(`Waiting ${ms} milliseconds ...`)
+    const token = core.getInput('GITHUB_TOKEN')
+    const octokit = new github.GitHub(token)
+    const context = github.context
 
-    core.debug((new Date()).toTimeString())
-    await wait(parseInt(ms));
-    core.debug((new Date()).toTimeString())
+    const payload = context.payload.issue || context.payload.pull_request
+    if (!payload) {
+      core.error('Payload is missing from the action')
+      return
+    }
+    core.debug(payload.body || 'no body')
+    core.debug(JSON.stringify(context))
 
-    core.setOutput('time', new Date().toTimeString());
   } catch (error) {
-    core.setFailed(error.message);
+    core.setFailed(error.message)
   }
 }
 
-run();
+run()

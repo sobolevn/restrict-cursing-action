@@ -1,33 +1,51 @@
 {
-  "name": "typescript-action",
-  "version": "0.0.0",
-  "private": true,
-  "description": "TypeScript template action",
+  "name": "restrict-cursing-action",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Github Action to prevent cursing and bad language in issues and pull requests",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "lint": "eslint --ext .js,.ts --ignore-path .gitignore src",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/sobolevn/restrict-cursing-action.git"
   },
   "keywords": [
-    "actions",
-    "node",
-    "setup"
+    "github",
+    "github-actions",
+    "github-action",
+    "github-action-node",
+    "cursing",
+    "bad-language",
+    "profanity-detection",
+    "abusive-language"
   ],
-  "author": "YourNameOrOrganization",
+  "author": "sobolevn",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.0.0"
+    "@actions/core": "^1.0.0",
+    "@actions/github": "^1.1.0",
+    "cuss": "^1.16.0"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.13",
     "@types/node": "^12.0.4",
-    "jest": "^24.8.0",
-    "jest-circus": "^24.7.1",
-    "ts-jest": "^24.0.2",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "@wemake-services/eslint-config-javascript": "^0.3.0",
+    "@wemake-services/eslint-config-typescript": "^0.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-import-resolver-typescript": "^1.1.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-sonarjs": "^0.4.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-unicorn": "^12.0.2",
     "typescript": "^3.5.1"
   }
 }

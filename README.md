@@ -1,28 +1,35 @@
-# Create a JavaScript Action using TypeScript
+# Restrict Cursing Action
 
-Use this template to bootstrap the creation of a JavaScript action.:rocket:
+This Github Action is used to automatically delete comments with bad language.
 
-This template includes compilication support, tests, a validation workflow, publishing, and versioning guidance.  
+We use [`cuss`](https://github.com/words/cuss) as the words database.
 
-If you are new, there's also a simpler introduction.  See the [Hello World JavaScript Action](https://github.com/actions/hello-world-javascript-action)
 
-## Create an action from this template
+## Usage
 
-Click the `Use this Template` and provide the new repo details for your action
+```yaml
+- uses: sobolevn/restrict-cursing-action@latest
+```
 
-## Code in Master
+See the [actions tab](https://github.com/actions/javascript-action/actions) for runs of this action! :rocket:
 
-Install the dependencies  
+
+## Development
+
+Install the dependencies:
+
 ```bash
 $ npm install
 ```
 
-Build the typescript
+Build the typescript:
+
 ```bash
 $ npm run build
 ```
 
-Run the tests :heavy_check_mark:  
+Run the tests :heavy_check_mark::
+
 ```bash
 $ npm test
 
@@ -34,80 +41,9 @@ $ npm test
 ...
 ```
 
-## Change action.yml
-
-The action.yml contains defines the inputs and output for your action.
-
-Update the action.yml with your name, description, inputs and outputs for your action.
-
-See the [documentation](https://help.github.com/en/articles/metadata-syntax-for-github-actions)
-
-## Change the Code
-
-Most toolkit and CI/CD operations involve async operations so the action is run in an async function.
-
-```javascript
-import * as core from '@actions/core';
-...
-
-async function run() {
-  try { 
-      ...
-  } 
-  catch (error) {
-    core.setFailed(error.message);
-  }
-}
-
-run()
-```
-
 See the [toolkit documentation](https://github.com/actions/toolkit/blob/master/README.md#packages) for the various packages.
 
-## Publish to a distribution branch
 
-Actions are run from GitHub repos.  We will create a releases branch and only checkin production modules (core in this case). 
+## License
 
-Comment out node_modules in .gitignore and create a releases/v1 branch
-```bash
-# comment out in distribution branches
-# node_modules/
-```
-
-```bash
-$ git checkout -b releases/v1
-$ git commit -a -m "prod dependencies"
-```
-
-```bash
-$ npm prune --production
-$ git add node_modules
-$ git commit -a -m "prod dependencies"
-$ git push origin releases/v1
-```
-
-Your action is now published! :rocket: 
-
-See the [versioning documentation](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md)
-
-## Validate
-
-You can now validate the action by referencing the releases/v1 branch
-
-```yaml
-uses: actions/typescript-action@releases/v1
-with:
-  milliseconds: 1000
-```
-
-See the [actions tab](https://github.com/actions/javascript-action/actions) for runs of this action! :rocket:
-
-## Usage:
-
-After testing you can [create a v1 tag](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md) to reference the stable and tested action
-
-```yaml
-uses: actions/typescript-action@v1
-with:
-  milliseconds: 1000
-```
+[MIT](https://github.com/sobolevn/restrict-cursing-action/blob/master/LICENSE)
