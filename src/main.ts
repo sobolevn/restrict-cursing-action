@@ -3,31 +3,35 @@ import * as github from '@actions/github'
 
 // We name these files the same way as they are named in Github Actions:
 import { checkIssue } from './actions/issues'
-import { checkIssueComment } from './actions/issue_comment'
+import { checkIssueComment } from './actions/issue-comment'
 
 // TODO: check commit comments
 // TODO: check based on eventName
+// TODO: pack things in docker
+// eslint-disable-next-line max-lines-per-function
 async function run (): Promise<void> {
   try {
-    const token = core.getInput('token')
-    // TODO: process.env.GITHUB_TOKEN
-    // TODO: pack things in docker
-    console.log('GITHUB_TOKEN', core.getInput('GITHUB_TOKEN'))
-    console.log('token', core.getInput('token'))
-    console.log('env', process.env.GITHUB_TOKEN)
-    const octokit = new github.GitHub(token)
+    if (!process.env.GITHUB_TOKEN) {
+      throw new Error('Github token is missing')
+    }
+
+    const octokit = new github.GitHub(process.env.GITHUB_TOKEN)
 
     switch (github.context.eventName) {
       case 'issue_comment':
-        return checkIssueComment(github.context, async () => {
+        checkIssueComment(github.context, async () => {
           await octokit.issues.updateComment({
             ...github.context.repo,
             'comment_id': github.context.payload.comment.id,
-            'body': 'I am so sorry! :pray:'
+            'body': core.getInput('text'),
           })
         })
+        break
       case 'issues':
-        return checkIssue(github.context)
+        checkIssue(github.context)
+        break
+      default:
+        throw new Error(`Unsupported event type: ${github.context.eventName}`)
     }
   } catch (error) {
     core.setFailed(error.message)

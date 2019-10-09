@@ -1,6 +1,14 @@
 name: 'restrict-cursing-action'
 description: 'Github Action to prevent cursing and bad language in issues and pull requests'
 author: 'sobolevn'
+branding:
+  icon: 'cross'
+  color: 'red'
+inputs:
+  text:
+    description: 'Text of what to replace offensive comments with'
+    required: false
+    default: 'I am so sorry! :pray:'
 runs:
   using: 'node12'
   main: 'lib/main.js'
