@@ -10,5 +10,5 @@ inputs:
     required: false
     default: 'I am so sorry! :pray:'
 runs:
-  using: 'node12'
-  main: 'lib/main.js'
+  using: 'docker'
+  image: 'Dockerfile'

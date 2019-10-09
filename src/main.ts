@@ -6,8 +6,6 @@ import { checkIssue } from './actions/issues'
 import { checkIssueComment } from './actions/issue-comment'
 
 // TODO: check commit comments
-// TODO: check based on eventName
-// TODO: pack things in docker
 // eslint-disable-next-line max-lines-per-function, complexity
 async function run (): Promise<void> {
   try {
