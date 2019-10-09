@@ -31,7 +31,7 @@ $ npm run build
 Run the tests :heavy_check_mark::
 
 ```bash
-$ npm test
+
 
  PASS  ./index.test.js
   ✓ throws invalid number (3ms)
