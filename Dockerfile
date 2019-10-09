@@ -11,8 +11,10 @@
 
 FROM node:10-alpine
 
+ENV NODE_PATH="$NODE_PATH:/tmp/cursing"
+
 COPY . /tmp/cursing
 WORKDIR /tmp/cursing
 
 RUN npm install --prod
-ENTRYPOINT pwd && ls
+ENTRYPOINT ['node', '/tmp/cursing/lib/main.js']
