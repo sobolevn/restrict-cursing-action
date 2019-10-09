@@ -1,4 +1,7 @@
-FROM node:10
+FROM node:10-alpine
 
-RUN npm install
+COPY . /tmp/cursing
+WORKDIR /tmp/cursing
+
+RUN npm install --prod
 ENTRYPOINT ["node", "lib/main.js"]
