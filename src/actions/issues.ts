@@ -1,12 +1,10 @@
 import hasBadWords from '../words'
 
 export async function checkIssue (
-  context,
+  payload,
   editCallback,
 ): Promise<void> {
-  const checkResult = hasBadWords(
-    `${context.payload.issue.title} ${context.payload.issue.body}`,
-  )
+  const checkResult = hasBadWords(`${payload.title} ${payload.body}`)
   if (checkResult) {
     await editCallback()
   }
