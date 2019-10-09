@@ -5,6 +5,10 @@ on:
     types: [opened, edited]
   issue_comment:
     types: [created, edited]
+  pull_request:
+    types: [created, edited]
+  commit_comment:
+    types: [created, edited]
 
 jobs:
   comments:
