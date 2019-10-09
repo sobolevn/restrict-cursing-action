@@ -7,7 +7,6 @@ on:
     types: [created, edited]
   pull_request:
     types: [created, edited]
-  commit_comment:
 
 jobs:
   comments:
