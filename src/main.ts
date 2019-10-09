@@ -10,7 +10,11 @@ import { checkIssueComment } from './actions/issue_comment'
 async function run (): Promise<void> {
   try {
     const token = core.getInput('token')
-    console.log(core.getInput('GITHUB_TOKEN'), core.getInput('token'))
+    // TODO: process.env.GITHUB_TOKEN
+    // TODO: pack things in docker
+    console.log('GITHUB_TOKEN', core.getInput('GITHUB_TOKEN'))
+    console.log('token', core.getInput('token'))
+    console.log('env', process.env.GITHUB_TOKEN)
     const octokit = new github.GitHub(token)
 
     switch (github.context.eventName) {
