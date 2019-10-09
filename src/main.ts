@@ -27,9 +27,25 @@ async function run (): Promise<void> {
           })
         })
         break
+
       case 'issues':
-        checkIssue(github.context)
+        checkIssue(github.context, async () => {
+          const payload = github.context.payload.issue ||
+            github.context.payload.pull_request
+
+          if (!payload) {
+            throw new Error('Missing issue payload')
+          }
+
+          await octokit.issues.update({
+            ...github.context.repo,
+            'issue_number': payload.number,
+            'body': core.getInput('text'),
+            'title': core.getInput('text'),
+          })
+        })
         break
+
       default:
         throw new Error(`Unsupported event type: ${github.context.eventName}`)
     }
