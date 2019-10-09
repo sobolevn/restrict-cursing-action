@@ -17,4 +17,4 @@ COPY . /tmp/cursing
 WORKDIR /tmp/cursing
 
 RUN npm install --prod
-ENTRYPOINT ['node', '/tmp/cursing/lib/main.js']
+ENTRYPOINT ["node", "/tmp/cursing/lib/main.js"]
