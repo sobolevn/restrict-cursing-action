@@ -2,7 +2,7 @@
 
 This Github Action is used to automatically moderate comments with bad language.
 
-What it does? It turns offensive comments into [`I so sorry`](https://github.com/sobolevn/restrict-cursing-action/issues/3) comments:
+What it does? It turns offensive comments into [`I am so sorry`](https://github.com/sobolevn/restrict-cursing-action/issues/3) comments:
 
 [![Demo](https://github.com/sobolevn/restrict-cursing-action/blob/master/assets/demo.png?raw=true)](https://github.com/sobolevn/restrict-cursing-action)
 
@@ -47,7 +47,8 @@ You can also configure the final text:
     steps:
     - uses: sobolevn/restrict-cursing-action@latest
       with:
-        text: "Your custom text"
+        # Also supports emoji:
+        text: "Your custom text :+1:"
       env:
         # We need this token to edit the comment text:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
