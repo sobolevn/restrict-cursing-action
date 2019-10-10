@@ -2,7 +2,7 @@ name: 'restrict-cursing-action'
 description: 'Github Action to prevent cursing and bad language in issues and pull requests'
 author: 'sobolevn'
 branding:
-  icon: 'cross'
+  icon: 'alert-triangle'
   color: 'red'
 inputs:
   text:
