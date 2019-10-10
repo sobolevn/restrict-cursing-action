@@ -1,6 +1,6 @@
 # Restrict Cursing Action
 
-This Github Action is used to automatically delete comments with bad language.
+This Github Action is used to automatically moderate comments with bad language.
 
 What it does? It turns offensive comments into [`I so sorry`](https://github.com/sobolevn/restrict-cursing-action/issues/3) comments:
 
@@ -15,6 +15,8 @@ We use [`cuss`](https://github.com/words/cuss) as the bad words database.
 
 
 ## Usage
+
+Put this into your [workflow](https://help.github.com/en/articles/configuring-a-workflow):
 
 ```yaml
 name: comments
