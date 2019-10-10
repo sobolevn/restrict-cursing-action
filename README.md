@@ -1,5 +1,9 @@
 # Restrict Cursing Action
 
+[![wemake.services](https://img.shields.io/badge/%20-wemake.services-green.svg?label=%20&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC%2FxhBQAAAAFzUkdCAK7OHOkAAAAbUExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP%2F%2F%2F5TvxDIAAAAIdFJOUwAjRA8xXANAL%2Bv0SAAAADNJREFUGNNjYCAIOJjRBdBFWMkVQeGzcHAwksJnAPPZGOGAASzPzAEHEGVsLExQwE7YswCb7AFZSF3bbAAAAABJRU5ErkJggg%3D%3D)](https://wemake.services)
+[![Github Action](https://github.com/sobolevn/restrict-cursing-action/workflows/test/badge.svg)](https://github.com/sobolevn/restrict-cursing-action/actions)
+[![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-frontend-styleguide)
+
 This Github Action is used to automatically moderate comments with bad language.
 
 What it does? It turns offensive comments into [`I am so sorry`](https://github.com/sobolevn/restrict-cursing-action/issues/3) comments:
