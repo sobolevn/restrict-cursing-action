@@ -9,7 +9,7 @@
 # See it live:
 # https://github.com/sobolevn/restrict-cursing-action/actions
 
-FROM node:10-alpine
+FROM node:13-alpine
 
 ENV NODE_PATH="$NODE_PATH:/tmp/cursing"
 
