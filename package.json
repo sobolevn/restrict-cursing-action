@@ -36,7 +36,7 @@
     "@typescript-eslint/parser": "^1.11.0",
     "@wemake-services/eslint-config-javascript": "^0.3.0",
     "@wemake-services/eslint-config-typescript": "^0.2.0",
-    "eslint": "^6.6.0",
+    "eslint": "^6.7.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-import-resolver-typescript": "^1.1.1",
     "eslint-plugin-import": "^2.18.2",
