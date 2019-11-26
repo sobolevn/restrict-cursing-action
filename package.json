@@ -31,7 +31,7 @@
     "cuss": "^1.17.0"
   },
   "devDependencies": {
-    "@types/node": "^12.12.12",
+    "@types/node": "^12.12.14",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
     "@wemake-services/eslint-config-javascript": "^0.3.0",
