@@ -34,7 +34,7 @@
     "@types/node": "^12.12.14",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
-    "@wemake-services/eslint-config-javascript": "^0.3.0",
+    "@wemake-services/eslint-config-javascript": "^0.4.1",
     "@wemake-services/eslint-config-typescript": "^0.2.0",
     "eslint": "^6.7.2",
     "eslint-config-standard": "^14.1.0",
